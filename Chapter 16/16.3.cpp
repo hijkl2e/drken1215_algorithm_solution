@@ -32,7 +32,7 @@ public:
 		queue<int> q;
 		d[s] = 0;
 		q.push(s);
-		while (!q.empty()) {
+		while (q.size()) {
 			int u = q.front(); q.pop();
 			for (int idx : G[u]) {
 				auto &[v, cap, flow] = E[idx];
@@ -91,12 +91,8 @@ private:
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	while (true) {
-		int N{}, M{}, S{}, T{};
-		cin >> N >> M >> S >> T;
-		if (N == 0) {
-			break;
-		}
+	int N{}, M{}, S{}, T{};
+	while (cin >> N >> M >> S >> T, N) {
 		MF mf(N + 1);
 		while (M--) {
 			int a{}, b{};

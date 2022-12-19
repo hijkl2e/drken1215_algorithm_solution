@@ -13,17 +13,17 @@ int main() {
 		{"*", multiplies<ll>()},
 		{"/", divides<ll>()}
 	};
-	stack<ll> S;
+	stack<ll> st;
 	string tok;
 	while (cin >> tok) {
 		if (isdigit(tok[0])) {
-			S.push(stoll(tok));
+			st.push(stoll(tok));
 		} else {
-			ll y = S.top(); S.pop();
-			ll x = S.top(); S.pop();
-			S.push(op[tok](x, y));
+			ll y = st.top(); st.pop();
+			ll x = st.top(); st.pop();
+			st.push(op[tok](x, y));
 		}
 	}
-	cout << S.top() << "\n";
+	cout << st.top() << "\n";
 	return 0;
 }

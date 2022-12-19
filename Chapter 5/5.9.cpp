@@ -16,14 +16,13 @@ int main() {
 		cin >> A[i];
 	}
 	vector<ll> psum(N + 1);
-	partial_sum(A.begin() + 1, A.end(), psum.begin() + 1);
+	partial_sum(A.begin(), A.end(), psum.begin());
 	vector<vector<ll>> dp(N + 1, vector<ll>(N + 2, INF));
 	for (int i = 1; i <= N; ++i) {
 		dp[i][i + 1] = 0;
 	}
-	for (int s = 2; s <= N; ++s) {
-		for (int i = 1; i + s <= N + 1; ++i) {
-			int j = i + s;
+	for (int i = N - 1; i > 0; --i) {
+		for (int j = i + 2; j < N + 2; ++j) {
 			for (int k = i + 1; k < j; ++k) {
 				dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);
 			}

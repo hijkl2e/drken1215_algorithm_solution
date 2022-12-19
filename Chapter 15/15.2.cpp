@@ -40,12 +40,8 @@ private:
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	while (true) {
-		int N{}, M{};
-		cin >> N >> M;
-		if (N == 0) {
-			break;
-		}
+	int N{}, M{};
+	while (cin >> N >> M, N) {
 		vector<iii> E(M);
 		for (int i = 0; i < M; ++i) {
 			int s{}, t{}, c{};

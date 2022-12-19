@@ -121,22 +121,22 @@ private:
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	Stack<int> S;
-	Queue<int> Q;
+	Stack<int> st;
+	Queue<int> q;
 	for (int i = 1; i < 9; ++i) {
 		if (i % 2) {
-			S.push(i);
+			st.push(i);
 		} else {
-			Q.push(i);
+			q.push(i);
 		}
 	}
-	while (!S.empty()) {
-		cout << S.top() << "\n";
-		S.pop();
+	while (st.size()) {
+		cout << st.top() << "\n";
+		st.pop();
 	}
-	while (!Q.empty()) {
-		cout << Q.front() << "\n";
-		Q.pop();
+	while (q.size()) {
+		cout << q.front() << "\n";
+		q.pop();
 	}
 	return 0;
 }

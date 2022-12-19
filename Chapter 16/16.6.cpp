@@ -32,7 +32,7 @@ private:
 		queue<int> q;
 		d[s] = 0;
 		q.push(s);
-		while (!q.empty()) {
+		while (q.size()) {
 			int u = q.front(); q.pop();
 			for (int idx : G[u]) {
 				auto &[v, cap, flow] = E[idx];

@@ -11,23 +11,23 @@ int main() {
 	cin >> S;
 	vector<ii> A;
 	A.reserve(S.size() / 2);
-	stack<int> St;
+	stack<int> st;
 	for (int i = S.size() - 1; i >= 0; --i) {
 		if (S[i] == ')') {
-			St.push(i);
+			st.push(i);
 		} else {
-			if (St.empty()) {
+			if (st.empty()) {
 				break;
 			}
-			int x = St.top(); St.pop();
+			int x = st.top(); st.pop();
 			A.push_back({i, x});
 		}
 	}
 	if (A.size() == S.size() / 2) {
 		cout << "Yes\n";
 		reverse(A.begin(), A.end());
-		for (int i = 0; i < A.size(); ++i) {
-			cout << "(" << A[i].first << ", " << A[i].second << ")\n";
+		for (auto &p : A) {
+			cout << "(" << p.first << ", " << p.second << ")\n";
 		}
 	} else {
 		cout << "No\n";

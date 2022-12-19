@@ -5,12 +5,8 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	while (true) {
-		int N{}, M{};
-		cin >> N >> M;
-		if (N == 0) {
-			break;
-		}
+	int N{}, M{};
+	while (cin >> N >> M, N) {
 		vector<int> P(N + 1);
 		for (int i = 1; i <= N; ++i) {
 			cin >> P[i];

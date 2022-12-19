@@ -22,9 +22,9 @@ bool solve(int d) {
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	int TC{};
-	cin >> TC;
-	while (TC--) {
+	int T{};
+	cin >> T;
+	while (T--) {
 		cin >> N >> C;
 		x.resize(N);
 		for (int i = 0; i < N; ++i) {
